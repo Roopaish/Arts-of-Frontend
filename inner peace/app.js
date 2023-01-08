@@ -59,3 +59,18 @@ wrapper.onmouseover = () => {
 wrapper.onmouseleave = () => {
   startAnimation();
 };
+
+// play audio on hover over the tiles
+const audios = document.querySelectorAll("audio");
+const shapes = document.querySelectorAll(".shape");
+
+const playAudio = (index) => {
+  if (!audios[index].paused) {
+    audios[index].currentTime = 0;
+  }
+  audios[index].play();
+};
+
+shapes.forEach((shape, index) => {
+  shape.onmouseover = () => playAudio(index);
+});
