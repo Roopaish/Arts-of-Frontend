@@ -73,4 +73,5 @@ const playAudio = (index) => {
 
 shapes.forEach((shape, index) => {
   shape.onmouseover = () => playAudio(index);
+  shape.onclick = () => playAudio(index);
 });
